@@ -1,698 +1,701 @@
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-    * {
-        margin: 0px;
-        padding: 0px;
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        transition: all 0.3s ease-in;
-        -webkit-transition: all 0.3s ease-in;
-        -moz-transition: all 0.3s ease-in;
-        text-decoration: none;
-        font-family: 'Source Sans Pro', sans-serif;
-    }
-    
-     ::before,
-     ::after {
-        transition: all 0.3s ease-in;
-        -webkit-transition: all 0.3s ease-in;
-        -moz-transition: all 0.3s ease-in;
-    }
-    
-     :root {
-        --yellow: #F1C50E;
-        --orange: #fe760f;
-        --black: #111111;
-        --white: #fffff1;
-    }
-    
-    html,
-    body {
-        height: 100%;
-        font-size: 18px;
-        scroll-behavior: smooth;
-    }
-    
-    h1,
-    h2,
-    h3 {
-        font-family: 'Playfair Display SC', serif;
-    }
-    /* classes which are use frequently */
-    
-    .flex {
-        display: flex;
-        justify-content: space-between;
-        /* align-items: center; */
-        flex-wrap: wrap;
-    }
-    
-    .fix-width {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0px 6px;
-    }
-    
-    .orange {
-        color: var(--orange);
-    }
-    
-    .read {
-        color: var(--orange);
-        font-size: 1.2rem;
-        font-family: 'Playfair Display', serif;
-        position: relative;
-        word-spacing: 2px;
-    }
-    
-    .read::before {
-        content: '';
-        position: absolute;
-        width: 0%;
-        height: 2px;
-        background-color: var(--orange);
-        bottom: 0px;
-    }
-    
-    .read:hover::before {
-        width: 100%;
-    }
-    /* header */
-    
-    header {
-        background: url('../images/bg.jpg');
-        background-position: top center;
-        background-size: cover;
-        background-repeat: repeat;
-        min-height: 700px;
-        height: 100vh;
-        background-attachment: fixed;
-        position: relative;
-    }
-    
-    header nav {
-        width: 100%;
-        background-color: var(--white);
-        position: fixed;
-        z-index: 999;
-    }
-    
-    header nav .flex {
-        align-items: center;
-    }
-    
-    header .banner-text {
-        color: var(--white);
-        position: absolute;
-        bottom: 20px;
-        left: 0px;
-        right: 0px;
-    }
-    
-    header .banner-text h1 {
-        font-size: 4.2rem;
-        text-shadow: 2px 2px 3px black;
-        line-height: 4rem;
-    }
-    
-    header .banner-text p {
-        margin: 1rem 0rem 0rem 0rem;
-        font-size: 1.1rem;
-    }
-    /* navigation button from codepen*/
-    /* SLIDER */
-    
-    .slider {
-        width: 500px;
-        position: fixed;
-        top: 100px;
-        height: 100%;
-        background-color: #F1C50E;
-        z-index: 999;
-        right: -500px;
-        /* right: 0px; */
-    }
-    
-    .slider ul {
-        text-align: center;
-        padding-top: 25%;
-    }
-    
-    .slider ul li {
-        margin: 5% 0%;
-        list-style: none;
-    }
-    
-    .slider ul li a {
-        text-decoration: none;
-        color: white;
-        font-size: 1.2rem;
-    }
-    
-    .slider ul li a:hover {
-        text-shadow: 0px 15px 2px #fff;
-    }
-    
-    .active {
-        right: 0px;
-    }
-    
-    .hamburger {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        padding: 0;
-    }
-    
-    .line {
-        fill: none;
-        stroke: black;
-        stroke-width: 6;
-        transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .line1 {
-        stroke-dasharray: 60 207;
-        stroke-width: 6;
-    }
-    
-    .line2 {
-        stroke-dasharray: 60 60;
-        stroke-width: 6;
-    }
-    
-    .line3 {
-        stroke-dasharray: 60 207;
-        stroke-width: 6;
-    }
-    
-    .opened .line1 {
-        stroke-dasharray: 90 207;
-        stroke-dashoffset: -134;
-        stroke-width: 6;
-    }
-    
-    .opened .line2 {
-        stroke-dasharray: 1 60;
-        stroke-dashoffset: -30;
-        stroke-width: 6;
-    }
-    
-    .opened .line3 {
-        stroke-dasharray: 90 207;
-        stroke-dashoffset: -134;
-        stroke-width: 6;
-    }
-    /* menu */
-    
-    .menu {
-        padding-bottom: 10rem;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .menu .menu-box {
-        width: 32%;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .menu .menu-box img {
-        width: 200%;
-        height: 531px;
-        position: relative;
-        z-index: 2;
-        left: -103px;
-    }
-    
-    .menu h1 {
-        font-size: 5rem;
-        font-weight: 900;
-        color: var(--black);
-        position: absolute;
-        width: 64%;
-        left: 0px;
-        background-color: var(--yellow);
-        text-align: right;
-        padding-bottom: 1rem;
-        padding-right: 3%;
-        padding-top: 2.8rem;
-    }
-    
-    .menu .menu-text {
-        width: 36%;
-        margin-top: 11rem;
-        padding: 0rem 1.2rem;
-    }
-    
-    .menu .menu-text p {
-        font-weight: 800;
-        line-height: 38px;
-    }
-    
-    .menu .menu-text a {
-        margin-top: 2rem;
-        display: inline-block;
-        font-weight: 700;
-    }
-    
-    .menu .menu-text .black {
-        width: 200px;
-        height: 60px;
-        display: block;
-        background-color: var(--black);
-        margin-top: 5rem;
-    }
-    
-    .menu-right-img {
-        position: relative;
-        top: 201px;
-    }
-    
-    .menu .menu-right-img-after {
-        width: 70%;
-        height: 200px;
-        display: block;
-        position: absolute;
-        background-color: var(--orange);
-        left: 79%;
-        top: 35%;
-    }
-    /* cooking section */
-    
-    .cooking-parent {
-        background: url('../images/bg2.jpg');
-        padding-bottom: 3rem;
-        background-position: left top;
-        background-size: cover;
-        background-repeat: no-repeat;
-        text-align: center;
-        color: white;
-        background-attachment: fixed;
-    }
-    
-    .cooking-parent h1 {
-        font-size: 3.7rem;
-        font-weight: 400;
-        color: var(--orange);
-        font-family: 'Playfair Display', serif;
-        padding-top: 1rem;
-    }
-    
-    .cooking-parent p {
-        font-style: italic;
-        width: 45%;
-        margin: 10px auto;
-    }
-    
-    .cooking-parent .cooking {
-        width: 30%;
-        text-align: left;
-        margin-top: 1rem;
-        padding-left: 1rem;
-        padding-bottom: 2rem;
-    }
-    
-    .cooking-parent .cooking h2 {
-        font-size: 6.5rem;
-        font-weight: 300;
-    }
-    
-    .cooking-parent .cooking h1 {
-        font-size: 2.2rem;
-        padding-top: 0px;
-        font-weight: 600;
-    }
-    
-    .cooking-parent .cooking p {
-        width: 100%;
-        font-style: normal;
-        line-height: 28px;
-    }
-    
-    .cooking-parent .cooking a {
-        font-size: 1rem;
-        font-weight: 800;
-        margin-top: 0.7rem;
-        display: inline-block;
-    }
-    
-    .cooking-parent .cooking-box-1 {
-        background-color: white;
-        color: var(--black);
-    }
-    
-    .cooking-parent .cooking-box-1 h1 {
-        color: var(--black);
-    }
-    
-    .cooking-parent .cooking-box-2 {
-        background-color: #111111c0;
-    }
-    
-    .cooking-parent .cooking-box-2 h1 {
-        color: var(--white);
-    }
-    
-    .cooking-parent .cooking-box-3 {
-        background-color: var(--orange);
-    }
-    
-    .cooking-parent .cooking-box-3 h1 {
-        color: white;
-    }
-    
-    .cooking-parent .cooking-box-3 a {
-        color: white;
-    }
-    
-    .cooking-parent .cooking-box-3 .read::before {
-        background-color: white;
-    }
-    /* asian food */
-    
-    .asian-food {
-        position: relative;
-        margin-bottom: 16rem;
-    }
-    
-    .asian-food-box {
-        width: 50%;
-        padding: 6rem 0rem 13rem 0rem;
-    }
-    
-    .asian-food-box h1 {
-        font-size: 4rem;
-        font-family: 'Playfair Display', serif;
-        margin-bottom: 2.4rem;
-    }
-    
-    .asian-food-box p {
-        width: 55%;
-        text-align: center;
-        font-size: 1.1rem;
-    }
-    
-    .asian-food .white {
-        background-color: white;
-        text-align: right;
-        padding-right: 1rem;
-    }
-    
-    .asian-food .white p {
-        margin-left: 45%;
-    }
-    
-    .asian-food .yellow {
-        padding-left: 1rem;
-        background-color: var(--yellow);
-    }
-    /* asian-food-image */
-    
-    .asian-food .asian-food-image {
-        position: absolute;
-        left: 0px;
-        right: 0px;
-        top: 21rem;
-    }
-    
-    .asian-food .asian-food-image .image-box {
-        width: 32%;
-        overflow: hidden;
-        height: 400px;
-    }
-    
-    .asian-food .asian-food-image .image-box img {
-        width: 100%;
-    }
-    
-    .asian-food .asian-food-image .image-box:hover img {
-        transform: scale(1.2);
-        position: relative;
-    }
-    /* meat and fish */
-    
-    .meat-fish .meat-fish-img {
-        width: 40%;
-    }
-    
-    .meat-fish .meat-fish-img img {
-        width: 100%;
-        display: block;
-    }
-    
-    .meat-fish .meat-fish-text {
-        width: 20%;
-        background-color: var(--yellow);
-        padding-top: 12%;
-    }
-    
-    .meat-fish .meat-fish-text h1 {
-        font-size: 3rem;
-        font-weight: 900;
-        text-align: center;
-    }
-    /* farm section */
-    
-    .farm-product {
-        padding: 4rem 0rem;
-        position: relative;
-    }
-    
-    .farm-product .flex {
-        align-items: center;
-    }
-    
-    .farm-product .farm-img {
-        width: 30%;
-        overflow: hidden;
-        /* height: 370px; */
-    }
-    
-    .farm-product .farm-img::before {
-        content: '';
-        position: absolute;
-        width: 500px;
-        height: 300px;
-        left: 0px;
-        top: 0px;
-        background-color: var(--orange);
-    }
-    
-    .farm-product .farm-img img {
-        width: 100%;
-        position: relative;
-        z-index: 1;
-        top: -99px;
-    }
-    
-    .farm-product .farm-text {
-        width: 35%;
-        padding: 10px;
-    }
-    
-    .farm-product .farm-text h1 {
-        color: var(--orange);
-        font-size: 1.5rem;
-    }
-    
-    .farm-product .farm-text p {
-        margin: 1rem 0rem;
-    }
-    /* contact */
-    
-    .contact {
-        background-image: url(../images/bg3.jpg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        height: 100%;
-        min-height: 600px;
-    }
-    
-    .contact .flex {
-        align-items: flex-end;
-        height: 90%;
-    }
-    
-    .contact .footer-box {
-        width: 48%;
-        color: white;
-    }
-    
-    .contact .footer-box .contact-icon i {
-        margin-left: 10px;
-        display: inline-block;
-    }
-    
-    .contact .footer-box h3 {
-        font-weight: 300;
-        font-size: 1.5rem;
-        letter-spacing: 5px;
-    }
-    
-    .contact .footer-box p {
-        margin: 1.2rem 0rem;
-    }
-    
-    .contact .footer-box .box {
-        width: 30%;
-        text-align: center;
-        margin-bottom: 2.5rem;
-    }
-    
-    .contact .footer-box .box h1 {
-        font-size: 1.2rem;
-    }
-    
-    .contact .footer-box .box svg {
-        width: 30%;
-        fill: white;
-    }
-    
-    @media (max-width:980px) {
-        html {
-            font-size: 16px;
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            transition: all 0.3s ease-in;
+            -webkit-transition: all 0.3s ease-in;
+            -moz-transition: all 0.3s ease-in;
+            text-decoration: none;
+            font-family: 'Source Sans Pro', sans-serif;
         }
+        
+         ::before,
+         ::after {
+            transition: all 0.3s ease-in;
+            -webkit-transition: all 0.3s ease-in;
+            -moz-transition: all 0.3s ease-in;
+        }
+        
+         :root {
+            --yellow: #F1C50E;
+            --orange: #fe760f;
+            --black: #111111;
+            --white: #fffff1;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            font-size: 18px;
+            scroll-behavior: smooth;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display SC', serif;
+        }
+        /* classes which are use frequently */
+        
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            /* align-items: center; */
+            flex-wrap: wrap;
+        }
+        
         .fix-width {
-            max-width: 700px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0px 6px;
+        }
+        
+        .orange {
+            color: var(--orange);
+        }
+        
+        .read {
+            color: var(--orange);
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            word-spacing: 2px;
+        }
+        
+        .read::before {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: var(--orange);
+            bottom: 0px;
+        }
+        
+        .read:hover::before {
+            width: 100%;
+        }
+        /* header */
+        
+        header {
+            background: url('../images/bg.jpg');
+            background-position: top center;
+            background-size: cover;
+            background-repeat: repeat;
+            min-height: 700px;
+            height: 100vh;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        header nav {
+            width: 100%;
+            background-color: var(--white);
+            position: fixed;
+            z-index: 999;
+        }
+        
+        header nav .flex {
+            align-items: center;
+        }
+        
+        header .banner-text {
+            color: var(--white);
+            position: absolute;
+            bottom: 20px;
+            left: 0px;
+            right: 0px;
+        }
+        
+        header .banner-text h1 {
+            font-size: 4.2rem;
+            text-shadow: 2px 2px 3px black;
+            line-height: 4rem;
+        }
+        
+        header .banner-text p {
+            margin: 1rem 0rem 0rem 0rem;
+            font-size: 1.1rem;
+        }
+        /* navigation button from codepen*/
+        /* SLIDER */
+        
+        .slider {
+            width: 500px;
+            position: fixed;
+            top: 100px;
+            height: 100%;
+            background-color: #F1C50E;
+            z-index: 999;
+            right: -500px;
+            /* right: 0px; */
+        }
+        
+        .slider ul {
+            text-align: center;
+            padding-top: 25%;
+        }
+        
+        .slider ul li {
+            margin: 5% 0%;
+            list-style: none;
+        }
+        
+        .slider ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .slider ul li a:hover {
+            text-shadow: 0px 15px 2px #fff;
+        }
+        
+        .active {
+            right: 0px;
+        }
+        
+        .hamburger {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            padding: 0;
+        }
+        
+        .line {
+            fill: none;
+            stroke: black;
+            stroke-width: 6;
+            transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .line1 {
+            stroke-dasharray: 60 207;
+            stroke-width: 6;
+        }
+        
+        .line2 {
+            stroke-dasharray: 60 60;
+            stroke-width: 6;
+        }
+        
+        .line3 {
+            stroke-dasharray: 60 207;
+            stroke-width: 6;
+        }
+        
+        .opened .line1 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
+        }
+        
+        .opened .line2 {
+            stroke-dasharray: 1 60;
+            stroke-dashoffset: -30;
+            stroke-width: 6;
+        }
+        
+        .opened .line3 {
+            stroke-dasharray: 90 207;
+            stroke-dashoffset: -134;
+            stroke-width: 6;
         }
         /* menu */
+        
+        .menu {
+            padding-bottom: 10rem;
+            overflow: hidden;
+            position: relative;
+        }
+        
         .menu .menu-box {
-            width: 100%;
+            width: 32%;
+            overflow: hidden;
+            position: relative;
         }
+        
         .menu .menu-box img {
-            width: 100%;
+            width: 200%;
+            height: 531px;
+            position: relative;
+            z-index: 2;
+            left: -103px;
         }
+        
         .menu h1 {
-            top: 20%;
-            width: 75%;
-            padding-top: 24%;
-            text-align: left;
-            padding-left: 8%;
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--black);
+            position: absolute;
+            width: 64%;
+            left: 0px;
+            background-color: var(--yellow);
+            text-align: right;
+            padding-bottom: 1rem;
+            padding-right: 3%;
+            padding-top: 2.8rem;
         }
+        
         .menu .menu-text {
-            width: 81%;
+            width: 36%;
+            margin-top: 11rem;
+            padding: 0rem 1.2rem;
         }
+        
+        .menu .menu-text p {
+            font-weight: 800;
+            line-height: 38px;
+        }
+        
+        .menu .menu-text a {
+            margin-top: 2rem;
+            display: inline-block;
+            font-weight: 700;
+        }
+        
+        .menu .menu-text .black {
+            width: 200px;
+            height: 60px;
+            display: block;
+            background-color: var(--black);
+            margin-top: 5rem;
+        }
+        
+        .menu-right-img {
+            position: relative;
+            top: 201px;
+        }
+        
         .menu .menu-right-img-after {
             width: 70%;
-            height: 349px;
-            left: 60%;
-            top: 64%;
+            height: 200px;
+            display: block;
+            position: absolute;
+            background-color: var(--orange);
+            left: 79%;
+            top: 35%;
         }
-        .menu .menu-right-img {
-            overflow: unset;
+        /* cooking section */
+        
+        .cooking-parent {
+            background: url('../images/bg2.jpg');
+            padding-bottom: 3rem;
+            background-position: left top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: white;
+            background-attachment: fixed;
         }
-        /* cooking */
+        
+        .cooking-parent h1 {
+            font-size: 3.7rem;
+            font-weight: 400;
+            color: var(--orange);
+            font-family: 'Playfair Display', serif;
+            padding-top: 1rem;
+        }
+        
+        .cooking-parent p {
+            font-style: italic;
+            width: 45%;
+            margin: 10px auto;
+        }
+        
         .cooking-parent .cooking {
-            width: 48%;
-            margin: 0 auto;
-            margin-top: 10%;
+            width: 30%;
+            text-align: left;
+            margin-top: 1rem;
+            padding-left: 1rem;
+            padding-bottom: 2rem;
+        }
+        
+        .cooking-parent .cooking h2 {
+            font-size: 6.5rem;
+            font-weight: 300;
+        }
+        
+        .cooking-parent .cooking h1 {
+            font-size: 2.2rem;
+            padding-top: 0px;
+            font-weight: 600;
+        }
+        
+        .cooking-parent .cooking p {
+            width: 100%;
+            font-style: normal;
+            line-height: 28px;
+        }
+        
+        .cooking-parent .cooking a {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-top: 0.7rem;
+            display: inline-block;
+        }
+        
+        .cooking-parent .cooking-box-1 {
+            background-color: white;
+            color: var(--black);
+        }
+        
+        .cooking-parent .cooking-box-1 h1 {
+            color: var(--black);
+        }
+        
+        .cooking-parent .cooking-box-2 {
+            background-color: #111111c0;
+        }
+        
+        .cooking-parent .cooking-box-2 h1 {
+            color: var(--white);
+        }
+        
+        .cooking-parent .cooking-box-3 {
+            background-color: var(--orange);
+        }
+        
+        .cooking-parent .cooking-box-3 h1 {
+            color: white;
+        }
+        
+        .cooking-parent .cooking-box-3 a {
+            color: white;
+        }
+        
+        .cooking-parent .cooking-box-3 .read::before {
+            background-color: white;
         }
         /* asian food */
+        
+        .asian-food {
+            position: relative;
+            margin-bottom: 16rem;
+        }
+        
         .asian-food-box {
-            padding: 6rem 0rem 6rem 0rem;
+            width: 50%;
+            padding: 6rem 0rem 13rem 0rem;
         }
-        .asian-food .white p {
-            margin-left: 14%;
+        
+        .asian-food-box h1 {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 2.4rem;
         }
+        
         .asian-food-box p {
-            width: 88%;
+            width: 55%;
+            text-align: center;
+            font-size: 1.1rem;
         }
-        .asian-food .asian-food-image .image-box {
-            height: 270px;
+        
+        .asian-food .white {
+            background-color: white;
+            text-align: right;
+            padding-right: 1rem;
         }
-        .meat-fish .meat-fish-text {
-            padding-top: 2%;
+        
+        .asian-food .white p {
+            margin-left: 45%;
         }
-        /* farm product */
-        .farm-product .farm-img {
-            width: 90%;
+        
+        .asian-food .yellow {
+            padding-left: 1rem;
+            background-color: var(--yellow);
         }
-        .farm-product .farm-img::before {
-            width: 45%;
-            height: 70%;
-        }
-        .farm-product .farm-text {
-            width: 100%;
-        }
-        /* conatct */
-        .contact .footer-box {
-            width: 100%;
-            margin-bottom: 6%;
-        }
-        .contact .flex {
-            height: auto;
-        }
-        .contact {
-            height: auto;
-            padding-top: 65%;
-            min-height: auto;
-        }
-    }
-    
-    @media (max-width:650px) {
-        .fix-width {
-            max-width: 500px;
-        }
-        /* banner */
-        header .banner-text h1 {
-            font-size: 2.2rem;
-            line-height: unset;
-        }
-        .slider {
-            width: 300px;
-        }
-        .menu .menu-box {
-            width: 94%;
-        }
-        .menu .menu-box img {
-            width: 143%;
+        /* asian-food-image */
+        
+        .asian-food .asian-food-image {
+            position: absolute;
             left: 0px;
+            right: 0px;
+            top: 21rem;
+        }
+        
+        .asian-food .asian-food-image .image-box {
+            width: 32%;
+            overflow: hidden;
             height: 400px;
         }
-        .menu h1 {
-            padding-top: 28%;
-            width: 92%;
-        }
-        .menu .menu-text {
-            margin-top: 7rem;
+        
+        .asian-food .asian-food-image .image-box img {
             width: 100%;
         }
-        .menu .menu-text .black {
-            margin-top: 1rem;
-        }
-        .menu .menu-right-img {
-            overflow: hidden;
-        }
-        .cooking-parent h1 {
-            font-size: 2rem;
-        }
-        .cooking-parent p {
-            width: 100%;
-            font-size: 0.9rem;
-        }
-        .cooking-parent .cooking {
-            width: 98%;
-        }
-        .asian-food {
-            margin-bottom: 1rem;
-        }
-        .asian-food-box p {
-            text-align: unset;
-        }
-        .asian-food .asian-food-image {
+        
+        .asian-food .asian-food-image .image-box:hover img {
+            transform: scale(1.2);
             position: relative;
-            top: -84px;
         }
-        .asian-food .asian-food-image .image-box {
-            width: 100%;
-            height: auto;
-        }
+        /* meat and fish */
+        
         .meat-fish .meat-fish-img {
-            width: 100%;
+            width: 40%;
         }
+        
+        .meat-fish .meat-fish-img img {
+            width: 100%;
+            display: block;
+        }
+        
         .meat-fish .meat-fish-text {
-            width: 100%;
+            width: 20%;
+            background-color: var(--yellow);
+            padding-top: 12%;
         }
-    }
+        
+        .meat-fish .meat-fish-text h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+        }
+        /* farm section */
+        
+        .farm-product {
+            padding: 4rem 0rem;
+            position: relative;
+        }
+        
+        .farm-product .flex {
+            align-items: center;
+        }
+        
+        .farm-product .farm-img {
+            width: 30%;
+            overflow: hidden;
+            /* height: 370px; */
+        }
+        
+        .farm-product .farm-img::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            left: 0px;
+            top: 0px;
+            background-color: var(--orange);
+        }
+        
+        .farm-product .farm-img img {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            top: -99px;
+        }
+        
+        .farm-product .farm-text {
+            width: 35%;
+            padding: 10px;
+        }
+        
+        .farm-product .farm-text h1 {
+            color: var(--orange);
+            font-size: 1.5rem;
+        }
+        
+        .farm-product .farm-text p {
+            margin: 1rem 0rem;
+        }
+        /* contact */
+        
+        .contact {
+            background-image: url(../images/bg3.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100%;
+            min-height: 600px;
+        }
+        
+        .contact .flex {
+            align-items: flex-end;
+            height: 90%;
+        }
+        
+        .contact .footer-box {
+            width: 48%;
+            color: white;
+        }
+        
+        .contact .footer-box .contact-icon i {
+            margin-left: 10px;
+            display: inline-block;
+        }
+        
+        .contact .footer-box h3 {
+            font-weight: 300;
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+        }
+        
+        .contact .footer-box p {
+            margin: 1.2rem 0rem;
+        }
+        
+        .contact .footer-box .box {
+            width: 30%;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .contact .footer-box .box h1 {
+            font-size: 1.2rem;
+        }
+        
+        .contact .footer-box .box svg {
+            width: 30%;
+            fill: white;
+        }
+        
+        @media (max-width:980px) {
+            html {
+                font-size: 16px;
+            }
+            .fix-width {
+                max-width: 700px;
+            }
+            /* menu */
+            .menu .menu-box {
+                width: 100%;
+            }
+            .menu .menu-box img {
+                width: 100%;
+            }
+            .menu h1 {
+                top: 20%;
+                width: 75%;
+                padding-top: 24%;
+                text-align: left;
+                padding-left: 8%;
+            }
+            .menu .menu-text {
+                width: 81%;
+            }
+            .menu .menu-right-img-after {
+                width: 70%;
+                height: 349px;
+                left: 60%;
+                top: 66%;
+            }
+            .menu .menu-right-img {
+                overflow: unset;
+            }
+            /* cooking */
+            .cooking-parent .cooking {
+                width: 48%;
+                margin: 0 auto;
+                margin-top: 10%;
+            }
+            /* asian food */
+            .asian-food-box {
+                padding: 6rem 0rem 6rem 0rem;
+            }
+            .asian-food .white p {
+                margin-left: 14%;
+            }
+            .asian-food-box p {
+                width: 88%;
+            }
+            .asian-food .asian-food-image .image-box {
+                height: 270px;
+            }
+            .meat-fish .meat-fish-text {
+                padding-top: 2%;
+            }
+            /* farm product */
+            .farm-product .farm-img {
+                width: 90%;
+            }
+            .farm-product .farm-img::before {
+                width: 45%;
+                height: 70%;
+            }
+            .farm-product .farm-text {
+                width: 100%;
+            }
+            /* conatct */
+            .contact .footer-box {
+                width: 100%;
+                margin-bottom: 6%;
+            }
+            .contact .flex {
+                height: auto;
+            }
+            .contact {
+                height: auto;
+                padding-top: 65%;
+                min-height: auto;
+            }
+        }
+        
+        @media (max-width:650px) {
+            .fix-width {
+                max-width: 500px;
+            }
+            /* banner */
+            header .banner-text h1 {
+                font-size: 2.2rem;
+                line-height: unset;
+            }
+            .slider {
+                width: 300px;
+            }
+            .menu .menu-box {
+                width: 94%;
+            }
+            .menu .menu-box img {
+                width: 143%;
+                left: 0px;
+                height: 400px;
+            }
+            .menu h1 {
+                padding-top: 28%;
+                width: 92%;
+            }
+            .menu .menu-text {
+                margin-top: 7rem;
+                width: 100%;
+            }
+            .menu .menu-text .black {
+                margin-top: 1rem;
+            }
+            .menu .menu-text p {
+                margin-top: 100px;
+            }
+            .menu .menu-right-img {
+                overflow: hidden;
+            }
+            .cooking-parent h1 {
+                font-size: 2rem;
+            }
+            .cooking-parent p {
+                width: 100%;
+                font-size: 0.9rem;
+            }
+            .cooking-parent .cooking {
+                width: 98%;
+            }
+            .asian-food {
+                margin-bottom: 1rem;
+            }
+            .asian-food-box p {
+                text-align: unset;
+            }
+            .asian-food .asian-food-image {
+                position: relative;
+                top: -84px;
+            }
+            .asian-food .asian-food-image .image-box {
+                width: 100%;
+                height: auto;
+            }
+            .meat-fish .meat-fish-img {
+                width: 100%;
+            }
+            .meat-fish .meat-fish-text {
+                width: 100%;
+            }
+        }
